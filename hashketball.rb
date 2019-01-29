@@ -288,15 +288,31 @@ def winning_team
           att_data.each do |ply_name, ply_data|
             ply_data.each do |ind_data, value|
               if ind_data == :points
-                points1 += game_hash[location][team1][:points]
-                points2 += game_hash[location][team2][:points]
-                binding.pry
-          
+                points1 += value
+              end
+            end
+          end
+        end
+      end
+    elsif location == :away
+      team_data.each do |attribute, att_data|
+        if attribute == :players
+          att_data.each do |ply_name, ply_data|
+            ply_data.each do |ind_data, value|
+              if ind_data == :points
+                points2 += value
+              end
             end
           end
         end
       end
     end
+    if points1 > points2
+      return win_team = team1
+    else
+      return win_team = team2
+    end
+    
   end
   
 end

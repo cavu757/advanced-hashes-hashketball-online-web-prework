@@ -197,7 +197,7 @@ def player_numbers(team)
           att_data.each do |ply_name, ply_data|
             
               binding.pry
-              jersey_num << game_hash[location][attribute][ply_data][:number]
+              jersey_num << game_hash[location][attribute][ply_name][:number]
             
           end
         end

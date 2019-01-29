@@ -217,8 +217,26 @@ def player_stats(name)
 end
 
 def big_shoe_rebounds
+  big_shoe = ""
+  big_size = 0 
   game_hash.each do |location, team_data|
     team_data.each do |attribute, att_data|
       if attribute == :players
         att_data.each do |ply_name, ply_data|
-          if ply_name == name
+          ply_data.each do |ind_data, value|
+            if ind_data == :shoe
+              if value > big_size
+                big_size = value
+                big_shoe = ply_name
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+  game_hash[location][attribute][big_shoe][:rebounds]
+end
+            
+            
+            

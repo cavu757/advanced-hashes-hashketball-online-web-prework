@@ -351,10 +351,10 @@ def long_name_steals_a_ton
         end
       end
     end
-    if pwln == steal_ply
-      return true
-    else
-      return false
-    end
+  end
+  if pwln == steal_ply
+    return true
+  else
+    return false    
   end
 end

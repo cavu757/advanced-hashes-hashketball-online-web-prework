@@ -332,3 +332,19 @@ def player_with_longest_name
   pwln
 end
 
+def long_name_steals_a_ton
+  pwln = player_with_longest_name
+  max_steals = 0 
+  game_hash.each do |location, team_data|
+    team_data.each do |attribute, att_data|
+      if attribute == :players
+        att_data.each do |ply_name, ply_data|
+          if ply_name.length > letters
+            pwln = ply_name
+            letters = ply_name.length
+          end
+        end
+      end
+    end
+  end
+  

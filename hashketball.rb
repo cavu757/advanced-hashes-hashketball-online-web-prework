@@ -276,28 +276,26 @@ end
 
 def winning team
   win_team = ""
-  team1 = ""
+  team1 = game_hash[:home][:team_name]
   points1 = 0
-  team2 = ""
+  team2 = game_hash[:away][:team_name]
   points2 = 0 
+  binding.pry 
   game_hash.each do |location, team_data|
-    
-    
     team_data.each do |attribute, att_data|
-      if attribute == :team_name
-        team1 = game_hash[location][attribute]
+      if attribute == :players
         att_data.each do |ply_name, ply_data|
           ply_data.each do |ind_data, value|
             if ind_data == :points
-              if value > most_points
-                most_points = value
-                mvp = ply_name
-              end
+              points1 += game_hash[location][team1][:points]
+              points2 += game_hash[location][team2][:points]
+              binding.pry
+          
             end
           end
         end
       end
     end
   end
-  mvp
+  
 end

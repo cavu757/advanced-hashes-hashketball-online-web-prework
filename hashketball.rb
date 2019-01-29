@@ -274,7 +274,7 @@ def most_points_scored
   mvp
 end
 
-def winning team
+def winning_team
   win_team = ""
   team1 = game_hash[:home][:team_name]
   points1 = 0

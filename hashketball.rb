@@ -176,6 +176,5 @@ end
 
 def team_names
   game_hash.collect do |location, team_data|
-
-
+  end
 end

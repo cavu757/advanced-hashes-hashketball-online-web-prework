@@ -234,9 +234,9 @@ def big_shoe_rebounds
         end
       end
     end
+    game_hash[location][attribute][big_shoe][:rebounds]
   end
-  puts location
-  game_hash[location][attribute][big_shoe][:rebounds]
+  
 end
             
             

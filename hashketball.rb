@@ -280,7 +280,6 @@ def winning_team
   points1 = 0
   team2 = game_hash[:away][:team_name]
   points2 = 0 
-  
   game_hash.each do |location, team_data|
     if location == :home
       team_data.each do |attribute, att_data|
@@ -312,7 +311,24 @@ def winning_team
     else
       return win_team = team2
     end
-    
   end
-  
+end
+
+def player_with_longest_name
+  pwln = ""
+  letters = 0 
+  game_hash.each do |location, team_data|
+    team_data.each do |attribute, att_data|
+      if attribute == :players
+        att_data.each do |ply_name, ply_data|
+          if ply_name.length > letters
+            pwln = ply_name
+            letters = ply_name.length
+          end
+          
+        end
+      end
+    end
+  end
+  pwln
 end

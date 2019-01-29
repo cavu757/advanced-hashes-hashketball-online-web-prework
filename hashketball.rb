@@ -273,3 +273,31 @@ def most_points_scored
   end
   mvp
 end
+
+def winning team
+  win_team = ""
+  team1 = ""
+  points1 = 0
+  team2 = ""
+  points2 = 0 
+  game_hash.each do |location, team_data|
+    
+    
+    team_data.each do |attribute, att_data|
+      if attribute == :team_name
+        team1 = game_hash[location][attribute]
+        att_data.each do |ply_name, ply_data|
+          ply_data.each do |ind_data, value|
+            if ind_data == :points
+              if value > most_points
+                most_points = value
+                mvp = ply_name
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+  mvp
+end

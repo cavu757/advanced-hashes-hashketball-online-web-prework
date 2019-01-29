@@ -193,7 +193,7 @@ def player_numbers(team)
         if att_data == team 
           each
                  
-          end
+        
         end
       end
     end

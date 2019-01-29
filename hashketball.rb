@@ -252,3 +252,24 @@ def big_shoe_rebounds
   big_rebound 
 end
 
+def most_points_scored
+  mvp = ""
+  most_points = 0  
+  game_hash.each do |location, team_data|
+    team_data.each do |attribute, att_data|
+      if attribute == :players
+        att_data.each do |ply_name, ply_data|
+          ply_data.each do |ind_data, value|
+            if ind_data == :points
+              if value > most_points
+                most_points = value
+                mvp = ply_name
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+  mvp
+end

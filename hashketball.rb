@@ -280,7 +280,7 @@ def winning_team
   points1 = 0
   team2 = game_hash[:away][:team_name]
   points2 = 0 
-  binding.pry 
+  
   game_hash.each do |location, team_data|
     team_data.each do |attribute, att_data|
       if attribute == :players

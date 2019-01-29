@@ -339,9 +339,11 @@ def long_name_steals_a_ton
     team_data.each do |attribute, att_data|
       if attribute == :players
         att_data.each do |ply_name, ply_data|
-          if ply_name.length > letters
-            pwln = ply_name
-            letters = ply_name.length
+          ply_data.each do |ind_data, value|
+            if ind_data == :points
+              if value > most_points
+                most_points = value
+                mvp = ply_name
           end
         end
       end

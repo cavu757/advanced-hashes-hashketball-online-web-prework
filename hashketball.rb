@@ -237,16 +237,16 @@ def big_shoe_rebounds
     end
   end
   big_shoe
-  binding.pry 
-  game_hash.each do |location, team_data|
-    team_data.each do |attribute, att_data|
-      if attribute == :players
-        att_data.each do |ply_name, ply_data|
-          if game_hash[location][attribute][big_shoe] == ply_name
-            binding.pry
-            ply_data.each do |ind_data, value|
-              if ind_data == :rebounds
-                big_rebound = value
+  
+  game_hash.each do |location2, team_data2|
+    team_data.each do |attribute2, att_data2|
+      if attribute2 == :players
+        att_data2.each do |ply_name2, ply_data2|
+          if game_hash[location2][attribute2][big_shoe] == ply_name2
+            
+            ply_data2.each do |ind_data2, value2|
+              if ind_data2 == :rebounds
+                big_rebound = value2
               end
             end
           end

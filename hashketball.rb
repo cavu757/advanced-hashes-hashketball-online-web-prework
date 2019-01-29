@@ -175,13 +175,6 @@ def team_colors(team)
 end
 
 def team_names
-  team_names = []
-  game_hash.each do |location, team_data|
-    team_data.each do |attribute, att_data|
-      if attribute == :team_name
-        team_names << game_hash[location][:team_name]
-      end
-    end
-  end
+  puts game_hash.values 
 
 end

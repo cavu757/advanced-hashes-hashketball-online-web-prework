@@ -195,6 +195,7 @@ def player_numbers(team)
           att_data.each do |ply_name, ply_data|
             if ply_data == :number
               jersey_num << game_hash[location][attribute][ply_data][:number]
+              puts jersey_num
             end
           end
         end

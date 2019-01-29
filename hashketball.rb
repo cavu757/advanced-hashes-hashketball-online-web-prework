@@ -175,18 +175,27 @@ def team_colors(team)
 end
 
 def team_names
-  game_hash.collect do |location, team_data|
-  end
-end
-
-def player_numbers(team)
+  team_names = []
   game_hash.each do |location, team_data|
     team_data.each do |attribute, att_data|
       if attribute == :team_name
-        if att_data == team 
-          return game_hash[location][:players][:number]
-        end
+        team_names << game_hash[location][:team_name]
       end
     end
   end
 end
+
+def player_numbers(team)
+  jersey_num = []
+  game_hash.each do |location, team_data|
+    team_data.each do |attribute, att_data|
+      if attribute == :team_name 
+        if att_data == team 
+          each
+                 
+          end
+        end
+      end
+    end
+  end
+end   

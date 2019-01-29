@@ -219,6 +219,7 @@ end
 def big_shoe_rebounds
   big_shoe = ""
   big_size = 0 
+  big_rebound = 0 
   game_hash.each do |location, team_data|
     team_data.each do |attribute, att_data|
       if attribute == :players
@@ -243,7 +244,7 @@ def big_shoe_rebounds
         if game_hash[location][attribute][big_shoe] == ply_name
           ply_data.each do |ind_data, value|
             if ind_data == :rebounds
-              return value
+              big_rebound = value
             end
           end
         end
@@ -251,4 +252,5 @@ def big_shoe_rebounds
     end
   end
 end
+big_rebound
 end

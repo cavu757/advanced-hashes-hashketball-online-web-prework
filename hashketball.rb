@@ -198,7 +198,6 @@ def player_numbers(team)
             
               binding.pry
               jersey_num << game_hash[location][attribute][ply_data][:number]
-              puts jersey_num
             
           end
         end

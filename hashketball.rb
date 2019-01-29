@@ -203,7 +203,6 @@ def player_numbers(team)
 end
 
 def player_stats(name)
-
   game_hash.each do |location, team_data|
     team_data.each do |attribute, att_data|
       if attribute == :players
@@ -215,5 +214,4 @@ def player_stats(name)
       end
     end
   end
-
 end

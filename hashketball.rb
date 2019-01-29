@@ -325,7 +325,6 @@ def player_with_longest_name
             pwln = ply_name
             letters = ply_name.length
           end
-          
         end
       end
     end

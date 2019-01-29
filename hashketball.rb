@@ -210,6 +210,8 @@ def player_stats(name)
         att_data.each do |ply_name, ply_data|
           if ply_name == name
             return ply_data
+          end
+        end
       end
     end
   end

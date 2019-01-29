@@ -243,6 +243,7 @@ def big_shoe_rebounds
       if attribute == :players
         att_data.each do |ply_name, ply_data|
           if game_hash[location][attribute][big_shoe] == ply_name
+            binding.pry
             ply_data.each do |ind_data, value|
               if ind_data == :rebounds
                 big_rebound = value

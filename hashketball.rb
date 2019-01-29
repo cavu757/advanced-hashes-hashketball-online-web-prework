@@ -334,19 +334,27 @@ end
 
 def long_name_steals_a_ton
   pwln = player_with_longest_name
-  max_steals = 0 
+  max_steals = 0
+  steal_ply = ""
   game_hash.each do |location, team_data|
     team_data.each do |attribute, att_data|
       if attribute == :players
         att_data.each do |ply_name, ply_data|
           ply_data.each do |ind_data, value|
-            if ind_data == :points
-              if value > most_points
-                most_points = value
-                mvp = ply_name
+            if ind_data == :steals 
+              if value > max_steals
+                max_steals = value
+                steal_ply = ply_name
+              end
+            end
           end
         end
       end
+    end
+    if pwln == steal_ply
+      return true
+    else
+      return false
     end
   end
   

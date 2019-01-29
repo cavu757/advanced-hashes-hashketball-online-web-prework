@@ -175,6 +175,6 @@ def team_colors(team)
 end
 
 def team_names
-  puts game_hash.values_at(:team_name)
+  game_hash.values_at(:team_name)
 
 end
